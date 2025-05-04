@@ -64,6 +64,11 @@ public class XPackRestIT extends AbstractXPackRestTest {
         return createParameters();
     }
 
+    @Override
+    protected boolean installTemplates() {
+        return false;
+    }
+
     /**
      * Some rest tests depend on the trial license being generated before they run
      */

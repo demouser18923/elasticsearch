@@ -246,11 +246,6 @@ public abstract class IndexTemplateRegistry implements ClusterStateListener {
         if (event.localNodeMaster() == false && localNodeVersionAfterMaster == false) {
             return;
         }
-        for (ProjectMetadata project : event.state().metadata().projects().values()) {
-            addIngestPipelinesIfMissing(project);
-            addTemplatesIfMissing(project);
-            addIndexLifecyclePoliciesIfMissing(project);
-        }
     }
 
     /**
